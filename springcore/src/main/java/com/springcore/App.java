@@ -17,7 +17,7 @@ public class App
         ApplicationContext context =new ClassPathXmlApplicationContext("Config.xml");
         
         
-         Student st=    (Student)context.getBean("student1");
+         Student st=    (Student)context.getBean("student3");
          
          
          
