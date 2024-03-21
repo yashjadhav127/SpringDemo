@@ -1,18 +1,19 @@
 package com.springcore.autowiring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Humen {
 
 	String body;
 	
     @Autowired
+    @Qualifier("nomind")
 	Mind mind;
 	
 	
 	
 	
-    @Autowired
 	public Humen() {
 		super();
 		
