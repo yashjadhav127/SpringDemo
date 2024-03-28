@@ -14,6 +14,10 @@ public class Myclass {
 	
 	  @Value("#{ T(java.lang.Math).random() * 100  }")
 	int random;
+	  
+	  @Value("#{10 - 5 > 5}")   //boolean type
+
+	 boolean isActive;
 
 	public int getX() {
 		return x;
@@ -39,10 +43,19 @@ public class Myclass {
 		this.random = random;
 	}
 
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
 	@Override
 	public String toString() {
-		return "Myclass [x=" + x + ", y=" + y + ", random=" + random + "]";
+		return "Myclass [x=" + x + ", y=" + y + ", random=" + random + ", isActive=" + isActive + "]";
 	}
+
 	
 	
 	
