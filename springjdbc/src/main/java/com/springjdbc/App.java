@@ -22,11 +22,21 @@ public class App
         ApplicationContext context=new ClassPathXmlApplicationContext("com/springjdbc/config.xml");
         
       
-         StudentDao std=context.getBean("studentDaoImpl",studentDapImpl.class);
-         
-         Student stud=new Student(2,"John Doe","Computer Science","123 Main St");
-         
-         System.out.println( std.change(stud));
+        StudentDao std=context.getBean("studentDaoImpl",studentDapImpl.class);
+//         
+//         Student stud=new Student(2,"John Doe","Computer Science","123 Main St");
+//         
+//         System.out.println( std.change(stud));
+        
+        
+        //Deleting student form table of id 7
+        
+        
+       int result= std.delete(7);
+       
+       System.out.println("Deleted Row...."+result);
+        
+        
         
     }
 }
