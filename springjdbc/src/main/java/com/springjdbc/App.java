@@ -4,6 +4,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.springjdbc.daoImpl.Student;
+import com.springjdbc.daoImpl.StudentDao;
+import com.springjdbc.daoImpl.studentDapImpl;
+
 /**
  * Hello world!
  *
@@ -17,7 +21,12 @@ public class App
         
         ApplicationContext context=new ClassPathXmlApplicationContext("com/springjdbc/config.xml");
         
-        JdbcTemplate template= context.getBean("jdbcTemplate",JdbcTemplate.class);
+      
+         StudentDao std=context.getBean("studentDaoImpl",studentDapImpl.class);
+         
+         Student stud=new Student(2,"John Doe","Computer Science","123 Main St");
+         
+         System.out.println( std.change(stud));
         
     }
 }
