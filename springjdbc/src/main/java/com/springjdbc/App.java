@@ -1,5 +1,7 @@
 package com.springjdbc;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -32,9 +34,18 @@ public class App
         //Deleting student form table of id 7
         
         
-       int result= std.delete(7);
+//       int result= std.delete(7);
+//       
+//       System.out.println("Deleted Row...."+result)
+
+        
+        //Getting a student from result set
+        
+//        System.out.print(std.getStudent(6));
+        
+       List<Student> list=std.getAllStudent();
        
-       System.out.println("Deleted Row...."+result);
+       for(int i=0;i<list.size();i++) System.out.println(list.get(i));
         
         
         

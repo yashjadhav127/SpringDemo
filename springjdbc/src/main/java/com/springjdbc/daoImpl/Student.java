@@ -9,6 +9,13 @@ public class Student {
 	String course;
 	
 	 String address;
+	 
+	 
+
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public Student(int id, String name, String course, String address) {
 		super();
@@ -48,6 +55,11 @@ public class Student {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", course=" + course + ", address=" + address + "]";
 	}
 	 
 	 

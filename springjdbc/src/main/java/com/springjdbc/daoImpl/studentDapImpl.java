@@ -1,6 +1,11 @@
 package com.springjdbc.daoImpl;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
+
+import org.springframework.jdbc.core.RowMapper;
+
 
 public class studentDapImpl implements StudentDao {
 
@@ -51,6 +56,27 @@ public class studentDapImpl implements StudentDao {
 		
 	
 		
+	}
+
+	public Student getStudent(int StudentId) {
+		// TODO Auto-generated method stub
+		String query="Select * From Student where id=?";
+		
+		RowMapper<Student> RM=new RowMapperImpl();
+		
+		Student stud=this.template.queryForObject(query, RM,StudentId);
+		
+		return stud;
+	}
+
+	@Override
+	public List<Student> getAllStudent() {
+		// TODO Auto-generated method stub
+		String query="Select * From Student";
+		RowMapper<Student> RM=new RowMapperImpl();
+		List<Student> Li= this.template.query(query, RM);
+		
+		return Li;
 	}
 
 
